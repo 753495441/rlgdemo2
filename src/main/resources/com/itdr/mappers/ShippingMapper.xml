@@ -183,4 +183,10 @@
         from neuedu_shipping
         where id = #{shippingId,jdbcType=INTEGER} and user_id = #{uid}
     </select>
+    <select id="selectByUid" parameterType="map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from neuedu_shipping
+        where user_id = #{uid}
+    </select>
 </mapper>

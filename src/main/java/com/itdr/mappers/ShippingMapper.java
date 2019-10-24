@@ -4,6 +4,8 @@ import com.itdr.pojo.Shipping;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface ShippingMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -19,4 +21,7 @@ public interface ShippingMapper {
 
     //
     Shipping selectByIdAndUid(@Param("shippingId") Integer shippingId, @Param("uid") Integer uid);
+
+    //获取用户所有收货地址
+    List<Shipping> selectByUid(Integer uid);
 }
